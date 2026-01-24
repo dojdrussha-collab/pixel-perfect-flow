@@ -36,15 +36,6 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/50 to-background" />
       </motion.div>
 
-      {/* Interactive Cursor Glow */}
-      <motion.div
-        className="pointer-events-none fixed z-50 w-[250px] h-[250px] rounded-full opacity-10"
-        style={{
-          background: "radial-gradient(circle, hsl(var(--primary)) 0%, transparent 70%)",
-          x: mousePosition.x - 125,
-          y: mousePosition.y - 125,
-        }}
-      />
 
       {/* Floating Geometric Shapes */}
       <motion.div

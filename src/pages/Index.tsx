@@ -24,9 +24,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 border-t border-border/50">
         <div className="section-container text-center">
-          <p className="text-muted-foreground">
-            © 2024 WebDesign Studio. Все права защищены.
-          </p>
+          <p className="text-muted-foreground">© 2026 WebDesign Studio. Jamal Ramazanov</p>
         </div>
       </footer>
     </div>

@@ -39,9 +39,14 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="btn-primary text-sm py-3 px-6">
+            <a 
+              href="https://t.me/GenerationEon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-sm py-3 px-6"
+            >
               Обсудить проект
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -86,9 +91,14 @@ const Header = () => {
               >
                 Контакт
               </a>
-              <button className="btn-primary w-full mt-2">
+              <a 
+                href="https://t.me/GenerationEon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary w-full mt-2 block text-center"
+              >
                 Обсудить проект
-              </button>
+              </a>
             </nav>
           </motion.div>
         )}

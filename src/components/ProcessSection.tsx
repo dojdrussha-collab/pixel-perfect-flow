@@ -110,12 +110,12 @@ const ProcessSection = () => {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`glass-card p-8 relative group cursor-pointer transition-all duration-500 ${
+              className={`glass-card p-8 pt-10 relative group cursor-pointer transition-all duration-500 ${
                 hoveredIndex === index ? 'scale-[1.02] shadow-[0_0_60px_hsl(var(--' + process.color + ')_/_0.3)]' : ''
               } ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-50 scale-[0.98]' : ''}`}
             >
-              {/* Step Number */}
-              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-background border border-border flex items-center justify-center">
+              {/* Step Number - Above the card */}
+              <div className="absolute -top-6 left-6 w-12 h-12 rounded-xl bg-background border border-border flex items-center justify-center z-20">
                 <span className={`font-display font-bold text-${process.color}`}>{process.step}</span>
               </div>
 

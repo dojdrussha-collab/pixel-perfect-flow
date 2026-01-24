@@ -1,0 +1,100 @@
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="fixed top-0 left-0 right-0 z-50 py-5"
+    >
+      <div className="section-container">
+        <div className="glass-card px-6 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <a href="/" className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+              <span className="font-display font-bold text-primary-foreground text-lg">W</span>
+            </div>
+            <span className="font-display font-semibold text-xl text-foreground hidden sm:block">
+              WebDesign
+            </span>
+          </a>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="#process" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+              Подход
+            </a>
+            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+              Форматы
+            </a>
+            <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+              Контакт
+            </a>
+          </nav>
+
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <button className="btn-primary text-sm py-3 px-6">
+              Обсудить проект
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden w-10 h-10 rounded-xl bg-muted flex items-center justify-center"
+          >
+            {isMenuOpen ? (
+              <X className="w-5 h-5 text-foreground" />
+            ) : (
+              <Menu className="w-5 h-5 text-foreground" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="glass-card mt-2 p-6 md:hidden"
+          >
+            <nav className="flex flex-col gap-4">
+              <a 
+                href="#process" 
+                className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Подход
+              </a>
+              <a 
+                href="#pricing" 
+                className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Форматы
+              </a>
+              <a 
+                href="#contact" 
+                className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Контакт
+              </a>
+              <button className="btn-primary w-full mt-2">
+                Обсудить проект
+              </button>
+            </nav>
+          </motion.div>
+        )}
+      </div>
+    </motion.header>
+  );
+};
+
+export default Header;

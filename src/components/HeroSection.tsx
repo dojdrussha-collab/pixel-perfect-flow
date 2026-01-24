@@ -9,8 +9,8 @@ const HeroSection = () => {
   const mouseY = useMotionValue(0);
   
   const springConfig = { damping: 25, stiffness: 150 };
-  const rotateX = useSpring(useTransform(mouseY, [0, 1], [5, -5]), springConfig);
-  const rotateY = useSpring(useTransform(mouseX, [0, 1], [-5, 5]), springConfig);
+  const rotateX = useSpring(useTransform(mouseY, [0, 1], [2.5, -2.5]), springConfig);
+  const rotateY = useSpring(useTransform(mouseX, [0, 1], [-2.5, 2.5]), springConfig);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -45,11 +45,11 @@ const HeroSection = () => {
 
       {/* Interactive Cursor Glow */}
       <motion.div
-        className="pointer-events-none fixed z-50 w-[500px] h-[500px] rounded-full opacity-20"
+        className="pointer-events-none fixed z-50 w-[250px] h-[250px] rounded-full opacity-10"
         style={{
           background: "radial-gradient(circle, hsl(var(--primary)) 0%, transparent 70%)",
-          x: mousePosition.x - 250,
-          y: mousePosition.y - 250,
+          x: mousePosition.x - 125,
+          y: mousePosition.y - 125,
         }}
       />
 
@@ -189,25 +189,6 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 cursor-pointer"
-        onClick={scrollToProcess}
-      >
-        <motion.div 
-          whileHover={{ scale: 1.1 }}
-          className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center hover:border-primary transition-colors"
-        >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1.5 h-3 bg-primary rounded-full mt-2"
-          />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };

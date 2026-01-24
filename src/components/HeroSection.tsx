@@ -7,7 +7,7 @@ const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  
+
   const springConfig = { damping: 25, stiffness: 150 };
   const rotateX = useSpring(useTransform(mouseY, [0, 1], [2.5, -2.5]), springConfig);
   const rotateY = useSpring(useTransform(mouseX, [0, 1], [-2.5, 2.5]), springConfig);
@@ -31,15 +31,8 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Parallax */}
-      <motion.div 
-        className="absolute inset-0 z-0"
-        style={{ rotateX, rotateY, transformPerspective: 1200 }}
-      >
-        <img
-          src={heroBg}
-          alt="Digital magic background"
-          className="w-full h-full object-cover opacity-60 scale-110"
-        />
+      <motion.div className="absolute inset-0 z-0" style={{ rotateX, rotateY, transformPerspective: 1200 }}>
+        <img src={heroBg} alt="Digital magic background" className="w-full h-full object-cover opacity-60 scale-110" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/50 to-background" />
       </motion.div>
 
@@ -54,34 +47,34 @@ const HeroSection = () => {
       />
 
       {/* Floating Geometric Shapes */}
-      <motion.div 
-        animate={{ 
+      <motion.div
+        animate={{
           rotate: 360,
           y: [0, -30, 0],
         }}
-        transition={{ 
+        transition={{
           rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-          y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+          y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
         }}
         className="absolute top-20 left-[15%] w-24 h-24 border border-primary/30 rounded-xl opacity-40"
       />
-      <motion.div 
-        animate={{ 
+      <motion.div
+        animate={{
           rotate: -360,
           scale: [1, 1.2, 1],
         }}
-        transition={{ 
+        transition={{
           rotate: { duration: 25, repeat: Infinity, ease: "linear" },
-          scale: { duration: 8, repeat: Infinity, ease: "easeInOut" }
+          scale: { duration: 8, repeat: Infinity, ease: "easeInOut" },
         }}
         className="absolute bottom-32 right-[10%] w-32 h-32 border border-secondary/30 rounded-full opacity-30"
       />
-      <motion.div 
+      <motion.div
         animate={{ y: [0, 20, 0], x: [0, -10, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-1/3 right-[20%] w-3 h-3 bg-primary rounded-full shadow-[0_0_20px_hsl(var(--primary))]"
       />
-      <motion.div 
+      <motion.div
         animate={{ y: [0, -15, 0], x: [0, 15, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         className="absolute bottom-1/3 left-[25%] w-2 h-2 bg-secondary rounded-full shadow-[0_0_15px_hsl(var(--secondary))]"
@@ -89,13 +82,16 @@ const HeroSection = () => {
 
       {/* Animated Grid Lines */}
       <div className="absolute inset-0 z-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
             linear-gradient(to right, hsl(var(--primary) / 0.3) 1px, transparent 1px),
             linear-gradient(to bottom, hsl(var(--primary) / 0.3) 1px, transparent 1px)
           `,
-          backgroundSize: '60px 60px',
-        }} />
+            backgroundSize: "60px 60px",
+          }}
+        />
       </div>
 
       {/* Content */}
@@ -118,7 +114,7 @@ const HeroSection = () => {
           </motion.div>
 
           <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6">
-            <motion.span 
+            <motion.span
               className="block"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -126,20 +122,20 @@ const HeroSection = () => {
             >
               Веб-дизайн как
             </motion.span>
-            <motion.span 
+            <motion.span
               className="gradient-text inline-block"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.02,
-                textShadow: "0 0 40px hsl(var(--primary))"
+                textShadow: "0 0 40px hsl(var(--primary))",
               }}
             >
               бизнес-инструмент.
             </motion.span>
           </h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -155,9 +151,8 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-12"
           >
-            Разработка на Tilda и WordPress. Специализируюсь на конверсионных интерфейсах, 
-            где каждый пиксель работает на целевое действие. Превращаю хаос идей в работающий 
-            механизм генерации заявок.
+            Разработка на Tilda и WordPress. Специализируюсь на конверсионных интерфейсах, где каждый блок и текст
+            наполнен айдентикой и смыслом
           </motion.p>
 
           <motion.div
@@ -188,7 +183,6 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
       </div>
-
     </section>
   );
 };

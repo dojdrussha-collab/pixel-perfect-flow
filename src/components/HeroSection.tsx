@@ -9,26 +9,30 @@ const stats = [
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center pt-20 pb-16">
+    <section className="min-h-screen flex flex-col justify-center pt-24 pb-20">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="max-w-2xl"
+          className="max-w-3xl"
         >
-          <div className="text-xs text-muted-foreground uppercase tracking-widest mb-6">
+          <div className="text-xs text-muted-foreground uppercase tracking-widest mb-8">
             Tilda & WordPress Developer
           </div>
 
-          <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-5 text-foreground">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-foreground">
             Веб-дизайн как{" "}
             <span className="text-primary">бизнес-инструмент</span>
           </h1>
 
-          <p className="text-muted-foreground mb-8 leading-relaxed max-w-lg">
-            Проектирую системы продаж, а не просто картинки. 
-            Конверсионные интерфейсы с фокусом на результат.
+          <p className="text-lg text-muted-foreground mb-4 leading-relaxed max-w-2xl">
+            Проектирую системы продаж, а не просто картинки.
+          </p>
+
+          <p className="text-muted-foreground mb-10 leading-relaxed max-w-xl">
+            Конверсионные интерфейсы на Tilda и WordPress, где каждый блок 
+            работает на бизнес-цели. Аналитика, UX-логика и чистая реализация.
           </p>
 
           <motion.a
@@ -49,7 +53,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.4 }}
-          className="mt-20 grid grid-cols-3 glass-card max-w-md"
+          className="mt-24 grid grid-cols-3 glass-card max-w-lg"
         >
           {stats.map((stat, index) => (
             <div key={index} className="stat-item">

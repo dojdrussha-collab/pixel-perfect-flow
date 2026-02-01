@@ -9,30 +9,30 @@ const Header = () => {
     <motion.header
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 py-5"
+      transition={{ duration: 0.5 }}
+      className="fixed top-0 left-0 right-0 z-50 py-4"
     >
       <div className="section-container">
-        <div className="glass-card px-6 py-4 flex items-center justify-between">
+        <div className="glass-card px-6 py-3 flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <span className="font-display font-bold text-primary-foreground text-lg">W</span>
+          <a href="/" className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+              <span className="font-display font-bold text-primary-foreground text-sm">W</span>
             </div>
-            <span className="font-display font-semibold text-xl text-foreground hidden sm:block">
+            <span className="font-display font-semibold text-lg text-foreground hidden sm:block">
               WebDesign
             </span>
           </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#process" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+            <a href="#process" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
               Подход
             </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
               Форматы
             </a>
-            <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+            <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
               Контакт
             </a>
           </nav>
@@ -43,7 +43,7 @@ const Header = () => {
               href="https://t.me/GenerationEon"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-sm py-3 px-6"
+              className="btn-primary text-sm"
             >
               Обсудить проект
             </a>
@@ -52,7 +52,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden w-10 h-10 rounded-xl bg-muted flex items-center justify-center"
+            className="md:hidden w-10 h-10 rounded-lg bg-muted flex items-center justify-center"
           >
             {isMenuOpen ? (
               <X className="w-5 h-5 text-foreground" />

@@ -41,10 +41,7 @@ const ProcessSection = () => {
           </h2>
         </motion.div>
 
-        <div className="relative">
-          <div className="process-line" />
-          
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {processes.map((process, index) => (
               <motion.div
                 key={process.step}
@@ -65,7 +62,6 @@ const ProcessSection = () => {
                 </p>
               </motion.div>
             ))}
-          </div>
         </div>
       </div>
     </section>

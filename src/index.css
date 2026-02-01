@@ -115,13 +115,6 @@
     @apply font-display text-3xl font-bold text-primary mb-1;
   }
 
-  .stat-label {
-    @apply text-xs text-muted-foreground uppercase tracking-wider;
-  }
-
-  .process-line {
-    @apply absolute top-1/2 left-0 right-0 h-px bg-border -translate-y-1/2 hidden lg:block;
-  }
 }
 
 @layer utilities {

@@ -10,21 +10,15 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <section id="process">
-          <ProcessSection />
-        </section>
-        <section id="pricing">
-          <PricingSection />
-        </section>
-        <section id="contact">
-          <CTASection />
-        </section>
+        <ProcessSection />
+        <PricingSection />
+        <CTASection />
       </main>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-border/50">
+      <footer className="py-10 border-t border-border">
         <div className="section-container text-center">
-          <p className="text-muted-foreground">© 2026 WebDesign Studio. Jamal Ramazanov</p>
+          <p className="text-muted-foreground text-sm">© 2026 WebDesign Studio. Jamal Ramazanov</p>
         </div>
       </footer>
     </div>

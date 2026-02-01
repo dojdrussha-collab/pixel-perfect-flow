@@ -70,39 +70,30 @@
 
 @layer components {
   .glass-card {
-    @apply rounded-xl border transition-all duration-300;
-    background: linear-gradient(135deg, hsl(222 47% 10% / 0.8) 0%, hsl(222 47% 7% / 0.6) 100%);
-    border-color: hsl(222 30% 18% / 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    @apply rounded-lg border transition-all duration-200;
+    background: hsl(222 47% 8% / 0.95);
+    border-color: hsl(222 30% 18% / 0.5);
   }
 
   .glass-card:hover {
-    border-color: hsl(217 91% 60% / 0.3);
+    border-color: hsl(217 91% 60% / 0.4);
   }
 
   .text-accent {
     color: hsl(var(--primary));
   }
 
-  .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(217 91% 65%) 0%, hsl(217 91% 50%) 100%);
-  }
-
   .btn-primary {
-    @apply relative overflow-hidden rounded-lg px-6 py-3 font-medium text-primary-foreground transition-all duration-300;
+    @apply rounded-md px-5 py-2.5 font-medium text-sm text-primary-foreground transition-all duration-200;
     background: hsl(var(--primary));
   }
 
   .btn-primary:hover {
     background: hsl(217 91% 55%);
-    box-shadow: 0 4px 20px hsl(217 91% 60% / 0.4);
-    transform: translateY(-1px);
   }
 
   .btn-outline {
-    @apply relative overflow-hidden rounded-lg px-6 py-3 font-medium text-foreground transition-all duration-300 border;
+    @apply rounded-md px-5 py-2.5 font-medium text-sm text-foreground transition-all duration-200 border;
     border-color: hsl(222 30% 25%);
     background: transparent;
   }
@@ -113,16 +104,23 @@
   }
 
   .section-container {
-    @apply max-w-6xl mx-auto px-6 lg:px-8;
+    @apply max-w-5xl mx-auto px-6 lg:px-8;
   }
 
-  .card-hover {
-    @apply transition-all duration-300;
+  .stat-item {
+    @apply text-center p-6 border-r border-border last:border-r-0;
   }
 
-  .card-hover:hover {
-    transform: translateY(-4px);
-    border-color: hsl(217 91% 60% / 0.4);
+  .stat-number {
+    @apply font-display text-3xl font-bold text-primary mb-1;
+  }
+
+  .stat-label {
+    @apply text-xs text-muted-foreground uppercase tracking-wider;
+  }
+
+  .process-line {
+    @apply absolute top-1/2 left-0 right-0 h-px bg-border -translate-y-1/2 hidden lg:block;
   }
 }
 

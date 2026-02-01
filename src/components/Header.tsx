@@ -7,97 +7,69 @@ const Header = () => {
 
   return (
     <motion.header
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
       className="fixed top-0 left-0 right-0 z-50 py-4"
     >
       <div className="section-container">
-        <div className="glass-card px-6 py-3 flex items-center justify-between">
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="font-display font-bold text-primary-foreground text-sm">W</span>
-            </div>
-            <span className="font-display font-semibold text-lg text-foreground hidden sm:block">
-              WebDesign
-            </span>
+        <div className="glass-card px-5 py-3 flex items-center justify-between">
+          <a href="/" className="font-display font-semibold text-foreground">
+            WebDesign
           </a>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#process" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+            <a href="#process" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Подход
             </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+            <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Форматы
             </a>
-            <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+            <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Контакт
             </a>
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <a 
-              href="https://t.me/GenerationEon"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary text-sm"
-            >
-              Обсудить проект
-            </a>
-          </div>
+          <a 
+            href="https://t.me/GenerationEon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary hidden md:block"
+          >
+            Обсудить
+          </a>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden w-10 h-10 rounded-lg bg-muted flex items-center justify-center"
+            className="md:hidden w-9 h-9 rounded-md bg-muted flex items-center justify-center"
           >
-            {isMenuOpen ? (
-              <X className="w-5 h-5 text-foreground" />
-            ) : (
-              <Menu className="w-5 h-5 text-foreground" />
-            )}
+            {isMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
-            className="glass-card mt-2 p-6 md:hidden"
+            className="glass-card mt-2 p-5 md:hidden"
           >
-            <nav className="flex flex-col gap-4">
-              <a 
-                href="#process" 
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
+            <nav className="flex flex-col gap-3">
+              <a href="#process" onClick={() => setIsMenuOpen(false)} className="text-sm text-muted-foreground hover:text-foreground py-2">
                 Подход
               </a>
-              <a 
-                href="#pricing" 
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <a href="#pricing" onClick={() => setIsMenuOpen(false)} className="text-sm text-muted-foreground hover:text-foreground py-2">
                 Форматы
               </a>
-              <a 
-                href="#contact" 
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-sm text-muted-foreground hover:text-foreground py-2">
                 Контакт
               </a>
               <a 
                 href="https://t.me/GenerationEon"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary w-full mt-2 block text-center"
+                className="btn-primary w-full text-center mt-2"
               >
-                Обсудить проект
+                Обсудить
               </a>
             </nav>
           </motion.div>

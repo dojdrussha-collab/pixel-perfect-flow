@@ -1,81 +1,71 @@
 import { motion } from "framer-motion";
-import { Search, Layout, Paintbrush, Smartphone } from "lucide-react";
 
 const processes = [
   {
-    icon: Search,
-    title: "Аналитика и сценарии",
-    description: "Погружение в нишу. Проектирование CJM. Продумываю, как пользователь мыслит на сайте, а не только как смотрит.",
     step: "01",
+    title: "Аналитика",
+    description: "Погружение в нишу и проектирование CJM",
   },
   {
-    icon: Layout,
-    title: "UX-проектирование",
-    description: "Каркас и логика. Сначала структура и смыслы, потом визуал.",
     step: "02",
+    title: "UX-проектирование",
+    description: "Структура, логика и пользовательские сценарии",
   },
   {
-    icon: Paintbrush,
-    title: "UI и верстка",
-    description: "Реализация на Tilda или WordPress. Чистый код, быстрая загрузка, точная типографика.",
     step: "03",
+    title: "UI и верстка",
+    description: "Реализация на Tilda или WordPress",
   },
   {
-    icon: Smartphone,
-    title: "Адаптация",
-    description: "Не просто мобильная версия — адаптив, напоминающий нативное приложение. Удобство большого пальца.",
     step: "04",
+    title: "Адаптация",
+    description: "Мобильная версия с нативным UX",
   },
 ];
 
 const ProcessSection = () => {
   return (
-    <section id="process" className="py-24 lg:py-32">
+    <section id="process" className="py-20 border-t border-border">
       <div className="section-container">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-12"
         >
-          <span className="text-primary text-sm font-medium mb-3 block">
+          <span className="text-xs text-muted-foreground uppercase tracking-widest mb-3 block">
             Методология
           </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-            Системная поэтапность работы
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
+            Этапы работы
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {processes.map((process, index) => (
-            <motion.div
-              key={process.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="glass-card p-6 relative card-hover group"
-            >
-              {/* Step Number */}
-              <div className="absolute -top-3 left-6 px-3 py-1 rounded-md bg-background border border-border">
-                <span className="font-display font-bold text-primary text-sm">{process.step}</span>
-              </div>
-
-              <div className="flex items-start gap-4 pt-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <process.icon className="w-6 h-6 text-primary" />
+        <div className="relative">
+          <div className="process-line" />
+          
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {processes.map((process, index) => (
+              <motion.div
+                key={process.step}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="glass-card p-5 group cursor-default"
+              >
+                <div className="text-primary font-display font-bold text-sm mb-3">
+                  {process.step}
                 </div>
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {process.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {process.description}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                <h3 className="font-display font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  {process.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {process.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

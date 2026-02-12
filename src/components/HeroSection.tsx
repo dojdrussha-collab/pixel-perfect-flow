@@ -36,7 +36,7 @@ const HeroSection = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.a
-              href="https://t.me/GenerationEon"
+              href="https://t.me/Solarstonne"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}

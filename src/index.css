@@ -6,38 +6,35 @@
 
 @layer base {
   :root {
-    --background: 228 50% 6%;
-    --foreground: 0 0% 100%;
+    --background: 220 30% 5%;
+    --foreground: 220 10% 95%;
 
-    --card: 228 45% 10%;
-    --card-foreground: 0 0% 100%;
+    --card: 220 25% 9%;
+    --card-foreground: 220 10% 95%;
 
-    --popover: 228 45% 9%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 220 25% 8%;
+    --popover-foreground: 220 10% 95%;
 
-    --primary: 240 80% 62%;
+    --primary: 220 50% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 228 40% 14%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 220 20% 13%;
+    --secondary-foreground: 220 10% 90%;
 
-    --muted: 228 30% 15%;
-    --muted-foreground: 225 20% 60%;
+    --muted: 220 15% 14%;
+    --muted-foreground: 220 10% 50%;
 
-    --accent: 240 80% 62%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 220 50% 55%;
+    --accent-foreground: 220 10% 95%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 60% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 40% 20%;
-    --input: 228 30% 18%;
-    --ring: 240 80% 62%;
+    --border: 220 15% 16%;
+    --input: 220 15% 16%;
+    --ring: 220 50% 55%;
 
-    --radius: 1rem;
-
-    --glow-primary: 240 80% 55%;
-    --glow-cyan: 190 90% 55%;
+    --radius: 0.75rem;
   }
 }
 
@@ -57,129 +54,91 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: "Manrope", sans-serif;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
   }
 }
 
 @layer components {
   .section-container {
-    @apply max-w-7xl mx-auto px-6 lg:px-10;
+    @apply max-w-6xl mx-auto px-6 lg:px-10;
   }
 
-  /* Glassmorphism card matching AirLume style */
   .glass-card {
-    @apply rounded-2xl border transition-all duration-300;
-    border-color: hsl(240 50% 30% / 0.4);
-    background: linear-gradient(160deg, hsl(228 50% 14% / 0.8) 0%, hsl(228 50% 8% / 0.6) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    @apply rounded-xl border transition-all duration-300;
+    border-color: hsl(220 15% 18%);
+    background: hsl(220 25% 8% / 0.9);
   }
 
   .glass-card:hover {
-    border-color: hsl(240 80% 62% / 0.5);
-    box-shadow: 0 0 30px hsl(240 80% 62% / 0.1), 0 0 60px hsl(240 80% 62% / 0.05);
+    border-color: hsl(220 30% 28%);
   }
 
   .feature-card {
-    @apply glass-card p-6 lg:p-8 flex flex-col h-full;
+    @apply glass-card p-7 flex flex-col h-full;
   }
 
-  /* AirLume style colored icon circles */
   .feature-icon {
-    @apply w-14 h-14 rounded-2xl flex items-center justify-center mb-5;
-    background: linear-gradient(135deg, hsl(240 80% 55% / 0.25) 0%, hsl(260 80% 55% / 0.1) 100%);
-    border: 1px solid hsl(240 80% 60% / 0.25);
+    @apply w-11 h-11 rounded-lg flex items-center justify-center mb-5;
+    background: hsl(220 20% 13%);
+    border: 1px solid hsl(220 15% 20%);
   }
 
-  /* Gradient primary button */
   .btn-primary {
-    @apply relative overflow-hidden rounded-full px-7 py-3 font-semibold text-primary-foreground transition-all duration-300 text-sm;
-    background: linear-gradient(135deg, hsl(240 80% 58%) 0%, hsl(260 80% 55%) 100%);
-    box-shadow: 0 4px 25px hsl(240 80% 60% / 0.4);
+    @apply relative overflow-hidden rounded-lg px-7 py-3 font-semibold text-primary-foreground transition-all duration-200 text-sm tracking-wide;
+    background: hsl(220 50% 50%);
   }
 
   .btn-primary:hover {
-    box-shadow: 0 6px 35px hsl(240 80% 60% / 0.6);
-    transform: translateY(-2px);
+    background: hsl(220 50% 55%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px hsl(220 50% 50% / 0.25);
   }
 
-  /* Outline button */
   .btn-outline {
-    @apply relative overflow-hidden rounded-full px-7 py-3 font-medium text-foreground transition-all duration-300 border text-sm;
-    border-color: hsl(240 40% 30%);
+    @apply relative overflow-hidden rounded-lg px-7 py-3 font-medium text-foreground transition-all duration-200 border text-sm;
+    border-color: hsl(220 15% 22%);
     background: transparent;
   }
 
   .btn-outline:hover {
-    background: hsl(228 40% 14%);
-    border-color: hsl(240 80% 62% / 0.6);
+    background: hsl(220 20% 11%);
+    border-color: hsl(220 20% 30%);
   }
 
-  /* Gradient text */
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(220 100% 75%) 0%, hsl(270 90% 75%) 100%);
+    background-image: linear-gradient(135deg, hsl(220 60% 70%) 0%, hsl(220 40% 55%) 100%);
   }
 
-  /* Section divider glow */
   .glow-line {
     position: absolute;
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(240 80% 60% / 0.4), transparent);
+    background: linear-gradient(90deg, transparent, hsl(220 20% 25% / 0.6), transparent);
   }
 
-  /* Hero background glow orbs */
   .hero-glow {
     position: absolute;
     border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.15;
+    filter: blur(150px);
+    opacity: 0.08;
     pointer-events: none;
   }
 
-  /* Vertical glowing lines - AirLume signature effect */
-  .vertical-lines {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .vertical-lines::before,
-  .vertical-lines::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(180deg, transparent 0%, hsl(240 80% 60% / 0.2) 30%, hsl(240 80% 60% / 0.05) 70%, transparent 100%);
-  }
-
-  .vertical-lines::before {
-    left: 20%;
-  }
-
-  .vertical-lines::after {
-    right: 25%;
-  }
-
-  /* Badge pill */
   .section-badge {
-    @apply inline-flex items-center gap-2 rounded-full border px-5 py-2 text-xs font-medium;
-    border-color: hsl(240 50% 30% / 0.5);
-    background: hsl(228 50% 12% / 0.8);
-    color: hsl(225 20% 65%);
+    @apply inline-flex items-center gap-2 rounded-md border px-4 py-1.5 text-xs font-medium uppercase tracking-widest;
+    border-color: hsl(220 15% 20%);
+    background: hsl(220 20% 10%);
+    color: hsl(220 10% 50%);
   }
 
-  /* Learn more link */
   .learn-more {
     @apply inline-flex items-center gap-1.5 text-sm font-medium mt-auto pt-5 transition-all duration-200;
-    color: hsl(240 80% 70%);
+    color: hsl(220 40% 60%);
   }
 
   .learn-more:hover {
     gap: 0.75rem;
-    color: hsl(240 80% 80%);
+    color: hsl(220 50% 70%);
   }
 }
 

@@ -20,19 +20,16 @@ const Header = () => {
     >
       <div className="section-container">
         <div className="glass-card px-6 py-3 flex items-center justify-between">
-          <a href="/" className="font-display font-bold text-lg text-foreground tracking-tight flex items-center gap-1.5">
-            <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, hsl(240 80% 58%), hsl(260 80% 55%))' }}>
-              <span className="text-xs font-bold text-white">C</span>
-            </div>
-            Content<span className="text-primary">Lab</span>
+          <a href="/" className="font-display font-bold text-base text-foreground tracking-tight">
+            ContentLab
           </a>
 
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors px-4 py-2 rounded-full hover:bg-secondary/60"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
               </a>
@@ -43,14 +40,14 @@ const Header = () => {
             href="https://t.me/Solarstonne"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary hidden md:inline-flex items-center text-xs px-5 py-2.5"
+            className="btn-primary hidden md:inline-flex items-center text-xs px-5 py-2"
           >
             Связаться
           </a>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden w-9 h-9 rounded-xl bg-secondary flex items-center justify-center"
+            className="md:hidden w-9 h-9 rounded-lg bg-secondary flex items-center justify-center"
           >
             {isMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
@@ -68,7 +65,7 @@ const Header = () => {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-sm text-muted-foreground hover:text-foreground py-2.5 px-3 rounded-xl hover:bg-secondary/50 transition-colors"
+                  className="text-sm text-muted-foreground hover:text-foreground py-2.5 px-3 rounded-lg hover:bg-secondary/50 transition-colors"
                 >
                   {link.label}
                 </a>

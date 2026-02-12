@@ -67,7 +67,7 @@ const HeroSection = () => {
         >
           {[
             { value: "50+", label: "Проектов" },
-            { value: "5", label: "Платформ" },
+            { value: "10", label: "Платформ" },
             { value: "10x", label: "Рост охватов" },
             { value: "24/7", label: "Автоматизация" },
           ].map((stat, i) => (

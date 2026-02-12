@@ -37,7 +37,7 @@ const Header = () => {
           </nav>
 
           <a
-            href="https://t.me/GenerationEon"
+            href="https://t.me/Solarstonne"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary hidden md:inline-flex items-center"

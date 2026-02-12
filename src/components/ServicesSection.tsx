@@ -52,9 +52,7 @@ const ServicesSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-xs text-primary font-medium uppercase tracking-widest mb-4 block">
-            Услуги
-          </span>
+          <span className="text-xs text-primary font-medium uppercase tracking-widest mb-4 block">Услуги</span>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
             Полный цикл контент-маркетинга
           </h2>
@@ -65,66 +63,62 @@ const ServicesSection = () => {
 
         {/* Top row - 2 large cards */}
         <div className="grid md:grid-cols-2 gap-5 mb-5">
-          {services.filter((s) => s.large).map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="feature-card"
-            >
-              <div className="feature-icon">
-                <service.icon className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="font-display text-lg font-semibold text-foreground mb-3">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed flex-grow">
-                {service.description}
-              </p>
-              <a
-                href="https://t.me/GenerationEon"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-primary font-medium mt-5 hover:gap-3 transition-all"
+          {services
+            .filter((s) => s.large)
+            .map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="feature-card"
               >
-                Подробнее <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-            </motion.div>
-          ))}
+                <div className="feature-icon">
+                  <service.icon className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-display text-lg font-semibold text-foreground mb-3">{service.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed flex-grow">{service.description}</p>
+                <a
+                  href="https://t.me/Solarstonne"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm text-primary font-medium mt-5 hover:gap-3 transition-all"
+                >
+                  Подробнее <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </motion.div>
+            ))}
         </div>
 
         {/* Bottom row - 3 cards */}
         <div className="grid md:grid-cols-3 gap-5">
-          {services.filter((s) => !s.large).map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="feature-card"
-            >
-              <div className="feature-icon">
-                <service.icon className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="font-display text-base font-semibold text-foreground mb-3">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed flex-grow">
-                {service.description}
-              </p>
-              <a
-                href="https://t.me/GenerationEon"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-primary font-medium mt-5 hover:gap-3 transition-all"
+          {services
+            .filter((s) => !s.large)
+            .map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="feature-card"
               >
-                Подробнее <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-            </motion.div>
-          ))}
+                <div className="feature-icon">
+                  <service.icon className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-display text-base font-semibold text-foreground mb-3">{service.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed flex-grow">{service.description}</p>
+                <a
+                  href="https://t.me/Solarstonne"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm text-primary font-medium mt-5 hover:gap-3 transition-all"
+                >
+                  Подробнее <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </motion.div>
+            ))}
         </div>
       </div>
     </section>

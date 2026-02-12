@@ -17,15 +17,14 @@ const CTASection = () => {
 
           <div className="relative z-10">
             <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Готовы превратить контент в{" "}
-              <span className="gradient-text">источник прибыли</span>?
+              Готовы превратить контент в <span className="gradient-text">источник прибыли</span>?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
               Обсудим вашу задачу и подберём оптимальный формат сотрудничества
             </p>
 
             <motion.a
-              href="https://t.me/GenerationEon"
+              href="https://t.me/Solarstonne"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}

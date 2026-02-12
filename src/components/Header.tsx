@@ -19,17 +19,20 @@ const Header = () => {
       className="fixed top-0 left-0 right-0 z-50 py-4"
     >
       <div className="section-container">
-        <div className="glass-card px-6 py-3.5 flex items-center justify-between">
-          <a href="/" className="font-display font-bold text-lg text-foreground tracking-tight">
+        <div className="glass-card px-6 py-3 flex items-center justify-between">
+          <a href="/" className="font-display font-bold text-lg text-foreground tracking-tight flex items-center gap-1.5">
+            <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, hsl(240 80% 58%), hsl(260 80% 55%))' }}>
+              <span className="text-xs font-bold text-white">C</span>
+            </div>
             Content<span className="text-primary">Lab</span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors px-4 py-2 rounded-full hover:bg-secondary/60"
               >
                 {link.label}
               </a>
@@ -40,7 +43,7 @@ const Header = () => {
             href="https://t.me/Solarstonne"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary hidden md:inline-flex items-center"
+            className="btn-primary hidden md:inline-flex items-center text-xs px-5 py-2.5"
           >
             Связаться
           </a>
@@ -59,19 +62,19 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             className="glass-card mt-2 p-5 md:hidden"
           >
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-sm text-muted-foreground hover:text-foreground py-2.5 px-2 rounded-lg hover:bg-secondary/50 transition-colors"
+                  className="text-sm text-muted-foreground hover:text-foreground py-2.5 px-3 rounded-xl hover:bg-secondary/50 transition-colors"
                 >
                   {link.label}
                 </a>
               ))}
               <a
-                href="https://t.me/GenerationEon"
+                href="https://t.me/Solarstonne"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary w-full text-center mt-3"
